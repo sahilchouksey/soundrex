@@ -1,0 +1,32 @@
+.related {
+  &-container {
+    // display: flex;
+    // justify-content: center;
+    // padding-top: 6rem;
+  }
+
+  &-content {
+    &-header {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+
+      &-thumbnail {
+        border-radius: 50%;
+        width: 7.5rem;
+        height: 7.5rem;
+        margin-right: 2rem;
+      }
+
+      & a {
+        color: var(--clr-white) !important;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

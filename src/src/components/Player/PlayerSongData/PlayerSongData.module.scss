@@ -1,0 +1,104 @@
+@import "../../../styles/mixins.scss";
+.player-song {
+  &-data {
+    // order: 2;
+    --thumbnail-size: 5.6rem;
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
+    margin-left: 1rem;
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(tab-land) {
+      flex: 2;
+    }
+    @include respond(tab-port) {
+      margin-left: 0;
+    }
+    @include respond(vvsm-dev) {
+      overflow: hidden;
+    }
+  }
+
+  &-thumbnail {
+    max-height: calc(var(--thumbnail-size) - 8px);
+    max-width: var(--thumbnail-size);
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &-text {
+    overflow: clip;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+
+    width: 20rem;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 20rem;
+
+    @include respond(tab-port) {
+      width: auto;
+      margin-left: 0;
+
+      max-width: 10rem;
+    }
+
+    @include respond(phone) {
+      max-width: 7rem;
+    }
+    @include respond(vsm-dev) {
+      max-width: 5vw;
+    }
+
+    @include respond(vvsm-dev) {
+      display: none;
+    }
+  }
+  &-title {
+    margin-bottom: 5px;
+  }
+  &-title,
+  &-subtitle {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+  }
+}
+
+.like {
+  display: block;
+  cursor: pointer;
+  height: var(--thumbnail-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  &-icon {
+    height: 2rem;
+    width: 2.25rem;
+  }
+
+  @include respond(phone) {
+    display: none;
+    margin-left: 5px;
+  }
+  @include respond(vsm-dev) {
+    margin-left: 0;
+  }
+  @include respond(vvsm-dev) {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../../styles/mixins.scss";
+.toggle-player-page-button {
+  // &-container {
+  //   order: 4;
+  // }
+  cursor: pointer;
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.25rem;
+  transform: rotate(0deg);
+  transition: all 0.5s;
+  &-icon {
+    width: 1.5rem;
+    height: 1rem;
+  }
+  &-rotate {
+    transform: rotate(180deg);
+  }
+
+  @include respond(sm-dev) {
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,19 @@
+.row-music-shelf-list {
+  list-style: none;
+  position: relative;
+  // min-height: 32rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // & > * {
+  //   &:not(:last-child) {
+  //     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  //   }
+  //   &:last-child {
+  //     border-bottom: 1px solid var(--divider);
+  //   }
+  // }
+}
+
+// .row-songs-list {
+// }

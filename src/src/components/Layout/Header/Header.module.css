@@ -1,0 +1,9 @@
+.header {
+  grid-column: full-start / full-end;
+  background-color: var(--navbar-bg-clr);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: subgrid;
+      grid-template-columns: subgrid;
+}
+/*# sourceMappingURL=Header.module.css.map */

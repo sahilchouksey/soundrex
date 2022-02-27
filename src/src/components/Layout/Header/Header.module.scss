@@ -1,0 +1,12 @@
+.header {
+  // background-color: greenyellow;
+  grid-column: full-start / full-end;
+
+  background-color: var(--navbar-bg-clr);
+
+  display: grid;
+  // only supports in firefox
+  // grid-template-columns: subgrid;
+  position: relative;
+  z-index: 50;
+}

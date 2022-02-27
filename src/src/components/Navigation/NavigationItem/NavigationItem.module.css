@@ -1,0 +1,126 @@
+.nav-item {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.75rem 0;
+}
+
+.nav-item-active {
+  color: var(--clr-white);
+}
+
+.nav-item .nav-link {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  text-decoration: none;
+  color: var(--clr-light-white);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  width: 0rem;
+  border-radius: 8px;
+  background-color: currentColor;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-item .nav-link:hover::after, .nav-item .nav-link:active::after {
+  width: 2rem;
+  height: 2.5px;
+}
+
+.nav-item .nav-link-active {
+  color: var(--clr-white) !important;
+}
+
+.nav-item .nav-link-active:hover::after, .nav-item .nav-link-active:active::after {
+  height: 2.5px;
+  width: 100%;
+}
+
+.nav-item .nav-link-active::after {
+  height: 2.5px;
+  width: 100%;
+}
+
+.nav-item .nav-btn {
+  color: currentColor;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--button-radius);
+  background: transparent;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-item .nav-btn:first-child {
+  margin-right: 1rem;
+}
+
+.nav-item .nav-btn:hover {
+  background-color: var(--clr-hover) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav-item .nav-btn-settings {
+  border-radius: 50rem;
+  height: 85%;
+  width: 85%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav-item .nav-btn-settings:hover {
+  background-color: var(--clr-hover) !important;
+  border: 1px solid rgba(190, 123, 123, 0.2) !important;
+}
+
+.nav-btn {
+  color: currentColor;
+  height: 80%;
+  width: 100%;
+  border: 1px solid transparent !important;
+  border-radius: var(--button-radius) !important;
+  background: transparent !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: var(--clr-hover) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.setting-menu {
+  left: -7.25rem !important;
+}
+/*# sourceMappingURL=NavigationItem.module.css.map */

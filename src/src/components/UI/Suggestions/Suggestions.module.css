@@ -1,0 +1,73 @@
+.suggestions {
+  position: absolute;
+  top: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 7rem;
+  width: 100%;
+  background-color: var(--clr-search-box-bg);
+  border: 1px solid var(--clr-placeholder);
+  border-top: none;
+  border-radius: 0 0 var(--button-radius) var(--button-radius);
+  list-style: none;
+}
+
+.suggestion {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.suggestion-box {
+  --background: var(--clr-search-box-bg);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.suggestion-box:hover, .suggestion-box:focus {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.suggestion-text {
+  padding: 0 5.6rem 0 1rem;
+}
+
+.suggestion-icon {
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.suggestion-icon-container {
+  color: var(--clr-search-box-bg);
+  width: 4vw;
+  min-width: 6rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Suggestions.module.css.map */

@@ -1,0 +1,286 @@
+@import "../../../styles/mixins.scss";
+
+.album-playlist {
+  &-wrapper {
+    --thumbnail-size: 27rem;
+    --content-margin-left: 5.5rem;
+    --grid-gap: 24px 48px;
+    width: 100%;
+    height: 100%;
+
+    @include respond(tab-land) {
+      --thumbnail-size: 25rem;
+    }
+
+    @include respond(tab-port) {
+      --grid-gap: 24px;
+      --thumbnail-size: 22.5rem;
+    }
+
+    @include respond(phone) {
+      --thumbnail-size: calc(100vw / 3);
+    }
+
+    @include respond(vsm-dev) {
+      --grid-gap: 18px;
+    }
+  }
+
+  &-header {
+    // tesing
+    display: grid;
+    grid-template-columns: minmax(16rem, var(--thumbnail-size)) 1fr;
+    grid-template-areas: "image metadata" "actions actions";
+    grid-gap: var(--grid-gap);
+    // min-height: 35rem;
+    row-gap: 5rem;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
+
+    @include respond(phone) {
+      row-gap: 2.5rem;
+    }
+
+    @include respond(sm-dev) {
+      row-gap: 2rem;
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      grid-area: actions;
+      width: 100%;
+      &-play {
+        --icon-size: 7rem;
+        --icon-margin-right: 5.5rem;
+        height: var(--icon-size);
+        width: var(--icon-size);
+        margin-right: var(--icon-margin-right);
+
+        @include respond(tab-port) {
+          --icon-size: 5.5rem;
+          --icon-margin-right: 4rem;
+        }
+
+        @include respond(phone) {
+          --icon-size: 5rem;
+          --icon-margin-right: 3rem;
+        }
+
+        &-icon {
+          height: calc(var(--icon-size) / 2.2);
+          width: calc(var(--icon-size) / 2.2);
+        }
+      }
+
+      &-like {
+        min-width: max-content;
+        & span {
+          margin: 0 0 0 8px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &:disabled,
+        &[disabled] {
+          border: 1px solid #999999;
+          background-color: #cccccc;
+          color: #666666;
+          transform: translate(0);
+          cursor: not-allowed;
+          &:hover,
+          &:active,
+          &:focus {
+            cursor: not-allowed;
+
+            transform: translate(0) !important;
+
+            color: #666666 !important;
+          }
+        }
+
+        @include respond(phone) {
+          min-width: 8.8rem;
+        }
+      }
+    }
+
+    &__img {
+      &-wrapper {
+        grid-area: image;
+        display: block;
+        position: relative;
+        width: var(--thumbnail-size);
+        min-width: 16rem;
+        height: var(--thumbnail-size);
+        min-height: 16rem;
+      }
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    &__content {
+      grid-area: metadata;
+      align-self: center;
+      overflow: hidden;
+      // margin-left: var(--content-margin-left);
+      display: flex;
+      flex-direction: column;
+      width: 40vw;
+
+      @include respond(vsm-dev) {
+        width: auto;
+      }
+    }
+
+    &__title {
+      color: var(--clr-white);
+      overflow: clip;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+
+      margin-bottom: 1.2rem;
+
+      @include respond(tab-port) {
+        font-size: var(--typo-display-small) !important;
+      }
+
+      @include respond(phone) {
+        font-size: var(--typo-text-large) !important;
+      }
+    }
+    &__subtitles,
+    &__description {
+      // overflow: clip;
+      // text-overflow: ellipsis;
+      // -webkit-line-clamp: 4;
+      // -webkit-box-orient: vertical;
+      // display: -webkit-box;
+      margin-bottom: 1.8rem;
+    }
+
+    &__subtitles {
+      display: flex;
+      flex-direction: column;
+
+      &-subtitle {
+        margin-bottom: 1rem;
+      }
+
+      &-secondSubtitle,
+      &-subtitle {
+        overflow: clip;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+      }
+    }
+
+    &__description {
+      width: 50vw;
+      &-less {
+        line-height: var(--body-line-height);
+        color: #aaa;
+        margin: 8px 0 0;
+        transition: all 0.4s;
+        @include respond(tab-port) {
+          width: 0;
+          height: 0;
+          display: none !important;
+        }
+      }
+
+      &-more {
+        margin: 8px 0 0;
+
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: normal;
+        max-height: calc(2 * 14px * var(--body-line-height));
+        transition: all 0.4s;
+        @include respond(tab-port) {
+          width: 0;
+          height: 0;
+          display: none !important;
+        }
+      }
+
+      &-btn {
+        @include respond(tab-port) {
+          width: 0;
+          height: 0;
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  &-contents {
+    --content-size: 85%;
+    --fixed-text-size: 1fr;
+    --header-height: 7.7rem;
+    margin: 1rem 0;
+    &-header {
+      min-height: var(--header-height);
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr var(--content-size) var(--fixed-text-size);
+      grid-template-areas: "thumb contents duration";
+      align-items: center;
+
+      color: var(--clr-light-white);
+      border-bottom: 1px solid rgba(#fff, 0.25);
+      @include respond(tab-port) {
+        --content-size: 76%;
+      }
+
+      @include respond(phone) {
+        margin-top: 2rem;
+
+        --content-size: 74%;
+      }
+
+      @include respond(sm-dev) {
+        margin-top: 5px;
+
+        --content-size: calc(100% / 1.65);
+        //   --fixed-text-size: 10%;
+      }
+
+      // @include respond(vsm-dev) {
+      //   --content-size: 70%;
+      // }
+
+      // @include respond(vvsm-dev) {
+      //   --content-size: 68%;
+      // }
+      &-thumb {
+        justify-self: center;
+        grid-area: thumb;
+      }
+      &-content {
+        grid-area: contents;
+      }
+      &-fixed {
+        justify-self: center;
+        grid-area: duration;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+}

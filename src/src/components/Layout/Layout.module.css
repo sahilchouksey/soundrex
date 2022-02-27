@@ -1,0 +1,14 @@
+.container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  row-gap: 4rem;
+  -ms-grid-rows: var(--navbar-height) min-content;
+      grid-template-rows: var(--navbar-height) -webkit-min-content;
+      grid-template-rows: var(--navbar-height) min-content;
+  -ms-grid-columns: [full-start] minmax(var(--side-space), 1fr) [center-start] ([col-start] minmax(min-content, 14rem) [col-end])[10] [center-end] minmax(var(--side-space), 1fr) [full-end];
+      grid-template-columns: [full-start] minmax(var(--side-space), 1fr) [center-start] repeat(10, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(var(--side-space), 1fr) [full-end];
+      grid-template-columns: [full-start] minmax(var(--side-space), 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(var(--side-space), 1fr) [full-end];
+}
+/*# sourceMappingURL=Layout.module.css.map */

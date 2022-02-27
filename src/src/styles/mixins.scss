@@ -1,0 +1,52 @@
+// Mixins
+@mixin respond($breakpoint) {
+  // CONVERTING PIXELS INTO EMS
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } // 1200/16
+  }
+
+  // @if $breakpoint == tab-port {
+  //   @media only screen and (max-width: 65.62em) {
+  //     @content;
+  //   } // 1050/16
+  // }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 58.43em) {
+      @content;
+    } // 935/16
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 40.68em) {
+      @content;
+    } // 651/16
+  }
+
+  @if $breakpoint == sm-dev {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    } // 500/16
+  }
+
+  @if $breakpoint == vsm-dev {
+    @media only screen and (max-width: 25em) {
+      @content;
+    } // 400/16
+  }
+
+  @if $breakpoint == vvsm-dev {
+    @media only screen and (max-width: 22.5em) {
+      @content;
+    } // 360/16
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // 1800/16
+  }
+}

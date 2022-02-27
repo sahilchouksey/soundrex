@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "MusicShelfCardWrapper.module.scss"
+    ],
+    "names": [],
+    "file": "MusicShelfCardWrapper.module.css"
+}

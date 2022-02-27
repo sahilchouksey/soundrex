@@ -1,0 +1,22 @@
+@import "../../styles/mixins.scss";
+.music-shelf {
+  position: relative;
+  // width: 100%;
+  // overflow: hidden;
+  &-title {
+    color: var(--clr-white);
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-mg {
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+  }
+  &-body {
+  }
+}

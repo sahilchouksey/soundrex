@@ -1,0 +1,70 @@
+.row-music-shelf {
+  --row-music-shelf-list-item-height: 8rem;
+  --row-music-shelf-list-item-thumbnail-size: 5.6rem;
+  width: 100%;
+  height: var(--row-music-shelf-list-item-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.row-music-shelf-content {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  min-height: 6.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.row-music-shelf-thumbnail-container {
+  width: var(--row-music-shelf-list-item-thumbnail-size);
+  height: var(--row-music-shelf-list-item-thumbnail-size);
+  margin: 0 2.6rem 0 0;
+  position: relative;
+}
+
+.row-music-shelf-thumbnail-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.row-music-shelf__title, .row-music-shelf__subtitle {
+  overflow: clip;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: inherit;
+}
+
+.row-music-shelf-title {
+  color: var(--clr-white);
+}
+
+.row-music-shelf-subtitle {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: var(--clr-light-white);
+}
+/*# sourceMappingURL=RowMusicShelf.module.css.map */

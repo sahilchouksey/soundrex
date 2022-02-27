@@ -1,0 +1,51 @@
+.music-card-box {
+  cursor: pointer;
+  color: var(--clr-primary);
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  --hover: var(--clr-hover);
+}
+
+.music-card-box-container {
+  height: 12.5rem;
+  width: 40rem;
+}
+
+.music-card-box:hover, .music-card-box:focus {
+  background-color: rgba(var(--hover), 0.2);
+}
+
+.music-card-box__title {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.music-card-box__img {
+  border-radius: var(--button-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: calc(100% / 1.25);
+  width: calc(100% / 3.75);
+  margin-left: 0.5rem;
+}
+/*# sourceMappingURL=MusicShelfBox.module.css.map */

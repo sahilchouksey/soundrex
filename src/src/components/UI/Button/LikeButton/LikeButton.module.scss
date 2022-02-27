@@ -1,0 +1,71 @@
+@import "../../../../styles/mixins.scss";
+
+.like-button {
+  &-spinner {
+    height: 3rem !important;
+    width: 3rem !important;
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &,
+  &:link,
+  &:visited {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    // width: 24rem;
+    max-width: 24rem;
+
+    flex: 1 1 auto;
+    height: 5.5rem;
+
+    align-items: center;
+    border: 1px solid var(--clr-light-white);
+    border-radius: var(--button-radius);
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  &:disabled,
+  &[disabled] {
+    border: 1px solid #999999;
+    background-color: #7e7e7e0a;
+    color: #666666;
+    transform: translate(0);
+    cursor: not-allowed;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: not-allowed;
+
+      transform: translate(0) !important;
+
+      color: #666666 !important;
+    }
+  }
+
+  @include respond(phone) {
+    font-size: var(--typo-text-small);
+    height: 5rem;
+    max-width: 21.5rem;
+  }
+
+  &:hover,
+  &:active {
+    border: 1px solid var(--clr-white);
+  }
+  & .like-icon-filled {
+    fill: var(--clr-secondary);
+    stroke: var(--clr-secondary);
+  }
+}
+
+.like-icon {
+  min-height: 24px;
+  min-width: 24px;
+  stroke: white;
+  fill: transparent;
+  transition: all 0.4s;
+}

@@ -1,0 +1,9 @@
+@import "../../../styles/mixins.scss";
+.showingResultsForRenderer {
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-port) {
+    flex-flow: column;
+  }
+}
