@@ -47,7 +47,7 @@ function MusicShelf({
   isLibrary,
   removeFromFavouritesHandler,
   refetchLibrary,
-
+  libraryPlay,
   ...props
 }) {
   let bodyClasses = `mg-t-2`;
@@ -128,6 +128,8 @@ function MusicShelf({
             see all
           </Button>
         )}
+
+        {libraryPlay && libraryPlay}
       </div>
 
       {strapline && (

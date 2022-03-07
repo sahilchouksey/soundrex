@@ -7,6 +7,8 @@ import {fetcher, hasLoginError} from "../../functions/requestFetcher";
 import Loading from "../../components/UI/Loading/Loading";
 import Spinner from "../../components/UI/Loading/Spinner";
 import MusicShelf from "../../components/MusicShelf/MusicShelf";
+import Add_to_queue from "../../components/Song/Add_to_queue_Menu";
+import {useHistory} from "react-router-dom";
 
 // testing
 
@@ -25,6 +27,8 @@ function Favourites({
         block: "start",
       });
   }, [rootElementRef]);
+
+  const history = useHistory();
 
   const {data, error, isError, isSuccess, refetch} = useQuery(
     ["soundrex", "favourites"],
@@ -102,6 +106,19 @@ function Favourites({
 
   if (isSuccess) {
     if (data?.library?.length > 0) {
+      const ids = data?.library?.map(e => e.videoId);
+
+      const videoId = ids?.[0];
+      const playlistId = `RDAMVM${ids?.[0]}`;
+
+      const endpoint =
+        videoId &&
+        `/play${videoId ? `?id=${videoId}` : ""}${
+          (!videoId && playlistId ? "?" : "&") + `list=${playlistId}` || ""
+        }`;
+
+      console.log("Favourites ", ids);
+
       content = (
         <MusicShelf
           refetchLibrary={refetch}
@@ -113,6 +130,21 @@ function Favourites({
           title={<p className="mg-b-3 link-large">Your library</p>}
           isTitleComponent={<p className="mg-b-3 link-large">Your library</p>}
           rawData={true}
+          // libraryPlay={
+          //   <Add_to_queue
+          //     playButton={true}
+          //     onClickPlayButton={() => history.push(endpoint)}
+          //     playButtonClass="favourite-play mg-b-3"
+          //     playButtonIconClass={{
+          //       className: "favourite-play-icon",
+          //       svg: "shuffle_play",
+          //       alt: "shuffle",
+          //       title: "shuffle",
+          //     }}
+          //     service={{isVideo: true, queueTarget: {videoId: ids}}}
+          //     disabled={data.library?.length <= 0}
+          //   />
+          // }
         />
       );
     } else {

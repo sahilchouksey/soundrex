@@ -351,6 +351,39 @@ body {
   height: 100%;
 }
 
+.contributor {
+  @include respond(phone) {
+    height: auto !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 2rem !important;
+  }
+
+  &-icons {
+    @include respond(phone) {
+      width: 100% !important;
+    }
+  }
+}
+
+.favourite {
+  &-play {
+    --size: 6rem;
+    --size-icon: calc((var(--size) / 2.15));
+
+    height: var(--size);
+    min-width: var(--size);
+    margin-right: 1.25rem;
+    &-icon {
+      --size: 6rem;
+      --size-icon: calc((var(--size) / 2.15));
+
+      width: var(--size-icon);
+      height: var(--size-icon);
+    }
+  }
+}
+
 .dark-mode {
   & .MuiPaper-root {
     background-color: #222222 !important;

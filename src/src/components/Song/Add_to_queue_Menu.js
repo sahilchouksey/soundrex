@@ -6,6 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import context from "../../context/context";
 import Spinner from "../UI/Loading/Spinner";
 import {toast} from "react-toastify";
+import PlayButton from "../UI/Button/PlayButton/PlayButton";
 
 const Add_to_queue = ({
   add_next = true,
@@ -14,6 +15,10 @@ const Add_to_queue = ({
   msg,
   onClick,
   // token,
+  playButton,
+  onClickPlayButton,
+  playButtonClass,
+  playButtonIconClass,
   ...props
 }) => {
   const {addToEndOfNextSongs, addToNextOfNextSongs} = useContext(context);
@@ -28,7 +33,7 @@ const Add_to_queue = ({
 
   if (isVideo) {
     reqBody = {
-      videoIds: [reqData],
+      videoIds: typeof reqData === "object" ? reqData : [reqData],
     };
   }
 
@@ -139,6 +144,20 @@ const Add_to_queue = ({
   const onMenuServiceClick = () => {
     getQueue.mutate();
   };
+
+  // if (playButton) {
+  //   return (
+  //     <PlayButton
+  //       onClick={() => {
+  //         onClickPlayButton();
+  //         onMenuServiceClick();
+  //       }}
+  //       // {...playButton}
+  //       className={playButtonClass}
+  //       icon={playButtonIconClass}
+  //     />
+  //   );
+  // }
 
   return (
     <MenuItem

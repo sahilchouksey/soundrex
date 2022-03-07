@@ -1,4 +1,4 @@
-import {memo, useEffect, useState} from "react";
+import {Fragment, memo, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import styles from "./RowMusicShelf.module.scss";
 
@@ -10,6 +10,14 @@ import Spinner from "../../UI/Loading/Spinner";
 import Popup from "../../UI/Popup/Popup";
 import Like from "../../UI/Icon/Icon";
 import MoreOptionsMenu from "../../UI/Menu/moreOptionsMenu/moreOptionsMenu";
+// import {ENOPROTOOPT} from "constants";
+
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import {Button} from "@mui/material";
+
+import PopupStyles from "../../UI/Popup/Popup.module.scss";
 
 function RowMusicShelf({
   refetchLibrary,
@@ -21,6 +29,10 @@ function RowMusicShelf({
   isStaticList,
   selectedSong,
   data,
+  type,
+  github,
+  linkedIn,
+  url,
   // isNextSongsList = false,
   ...props
 }) {
@@ -29,7 +41,8 @@ function RowMusicShelf({
     (rawData && data?.title) ||
     (data?.title?.length > 0 && getTitleFromArr(data?.title));
   const subtitle =
-    data?.subtitle?.length > 0 && getJsxFromArr(data.subtitle, `card-link `);
+    (rawData && data?.subtitle) ||
+    (data?.subtitle?.length > 0 && getJsxFromArr(data.subtitle, `card-link `));
   const shortBylineText =
     data?.shortBylineText?.length > 0 &&
     getJsxFromArr(data.shortBylineText, "card-link");
@@ -123,35 +136,58 @@ function RowMusicShelf({
 
   const [isRemovingFromLibrary, setIsRemovingFromLibrary] = useState(false);
 
+  // if (!endpoint && url) {
+  //   endpoint = url;
+  // }
+
+  let iconComp = !loading ? (
+    <Icon
+      style={{width: "3rem", height: "3rem"}}
+      className={`${styles["row-music-shelf-thumbnail-icon"]} `}
+      svg={icon}
+      alt={isPlayable ? "play song" : "open album"}
+    />
+  ) : (
+    <Spinner
+      style={
+        isPlayable
+          ? {width: "3rem", height: "3rem"}
+          : {width: "2.5rem", height: "2.5rem"}
+      }
+      className={`${styles["row-music-shelf-thumbnail-icon"]} `}
+    />
+  );
+
+  if (type === "contributor") {
+    iconComp = (
+      <InstagramIcon
+        style={{width: "3rem", height: "3rem"}}
+        className={`${styles["row-music-shelf-thumbnail-icon"]} `}
+        title={title}
+      />
+    );
+  }
+
   let content = (
     <li
       className={`relative ${styles["row-music-shelf"]} ${
         selectedSong?.videoId === data?.videoId && isStaticList
           ? styles["selected-song"]
           : ""
-      }  ${isLibrary && "flex-center"}`}>
+      }  ${isLibrary && "flex-center"}  ${
+        type === "contributor" && "contributor"
+      }`}>
       <Link
-        onClick={linkClickHandler}
+        onClick={() => {
+          if (url && type === "contributor") {
+            return window.location.replace(url);
+          }
+          linkClickHandler();
+        }}
         to={endpoint}
         className={` full-hw absolute  z-index-2`}></Link>
       <div className={styles["row-music-shelf-thumbnail-container"]}>
-        {!loading ? (
-          <Icon
-            style={{width: "3rem", height: "3rem"}}
-            className={`${styles["row-music-shelf-thumbnail-icon"]} `}
-            svg={icon}
-            alt={isPlayable ? "play song" : "open album"}
-          />
-        ) : (
-          <Spinner
-            style={
-              isPlayable
-                ? {width: "3rem", height: "3rem"}
-                : {width: "2.5rem", height: "2.5rem"}
-            }
-            className={`${styles["row-music-shelf-thumbnail-icon"]} `}
-          />
-        )}
+        {iconComp}
         <Image
           src={thumbnail}
           className={styles["row-music-shelf-thumbnail-img"]}
@@ -192,7 +228,7 @@ function RowMusicShelf({
       {/* </Link> */}
       {isLibrary && (
         <div
-          className={`${styles["library-button"]} ${styles["row-music-shelf-length"]}`}>
+          className={`${styles["library-button"]} ${styles["row-music-shelf-length"]} z-index-5`}>
           <Popup
             closedContent={
               <Like
@@ -200,6 +236,7 @@ function RowMusicShelf({
                 svg={"heart"}
                 alt="Like song"
                 style={{minWidth: "2.4rem", minHeight: "2.4rem"}}
+                className="z-index-5"
               />
             }
             title="Remove from Favourites?"
@@ -215,6 +252,32 @@ function RowMusicShelf({
               }
             }}
           />
+        </div>
+      )}
+
+      {/* CONTRIBUTORS */}
+      {type === "contributor" && (
+        <div className={`flex-center contributor-icons`}>
+          <div
+            className={`${styles["library-button"]} ${styles["row-music-shelf-length"]} z-index-5`}>
+            <Button className={PopupStyles["popup-click-btn"]} href={github}>
+              <GitHubIcon
+                title="Github"
+                style={{minWidth: "2.4rem", minHeight: "2.4rem"}}
+                className="z-index-5"
+              />
+            </Button>
+          </div>
+          <div
+            className={`${styles["library-button"]} ${styles["row-music-shelf-length"]} z-index-5`}>
+            <Button className={PopupStyles["popup-click-btn"]} href={linkedIn}>
+              <LinkedInIcon
+                title="LinkedIn"
+                style={{minWidth: "2.4rem", minHeight: "2.4rem"}}
+                className="z-index-5"
+              />
+            </Button>
+          </div>
         </div>
       )}
     </li>

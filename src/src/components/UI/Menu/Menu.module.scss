@@ -13,13 +13,17 @@
       width: 2.35rem;
     }
 
-    &:last-child {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 0 4.5rem 0 1.85rem !important ;
-      & span {
-      }
+    // &:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4.5rem 0 1.85rem !important ;
+    & span {
+    }
+    // }
+    &-contributors {
+      padding: 0 3.25rem 0 1.25rem !important;
+      min-height: 5.5rem !important;
     }
   }
 }

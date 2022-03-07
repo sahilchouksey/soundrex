@@ -228,7 +228,11 @@ function Song({
     }
     content = (
       <p
-        className={`centered capitalize text-medium ${styles["song-page-close"]}`}>
+        className={`centered capitalize text-medium ${styles["song"]} mg-t-1 ${
+          isPlayerPageOpen
+            ? styles["song-page-full"]
+            : styles["song-page-close"]
+        }`}>
         {error?.message ? error.message : "No data found."}
       </p>
     );
@@ -371,7 +375,10 @@ function Song({
             }`
           );
 
-          return setUpNextSongs([]);
+          if (validlist !== currentPlaylist) {
+            console.log("Cleaning queue", validlist, currentPlaylist);
+            return setUpNextSongs([]);
+          }
         }
       } else if (!id && list) {
         const extractedVideoIdFromPlaylistId =
@@ -489,13 +496,16 @@ function Song({
             list && list.replace("RDAMVM", "").trim();
 
           content = (
-            <Fragment>
-              <p
-                className={`centered capitalize text-medium ${styles["song-page-close"]}`}>
+            <div
+              className={`${styles["song"]} mg-t-1 ${
+                isPlayerPageOpen
+                  ? styles["song-page-full"]
+                  : styles["song-page-close"]
+              }`}>
+              <p className={`centered capitalize text-medium `}>
                 Up next list is empty.
               </p>
-              <div
-                className={`flex-center full-hw ${styles["song-page-close"]}`}>
+              <div className={`flex-center full-hw `}>
                 {id && extractedVideoIdFromPlaylistId !== id && (
                   <MyButton
                     className="fix-playlist-button "
@@ -504,19 +514,33 @@ function Song({
                   </MyButton>
                 )}
               </div>
-            </Fragment>
+            </div>
           );
         }
       }
     } else {
       content = (
         <p
-          className={`centered capitalize text-medium ${styles["song-page-close"]}`}>
+          className={`centered capitalize text-medium ${
+            styles["song"]
+          } mg-t-1 ${
+            isPlayerPageOpen
+              ? styles["song-page-full"]
+              : styles["song-page-close"]
+          }`}>
           No data found.
         </p>
       );
     }
   }
+  content = (
+    <p
+      className={`centered capitalize text-medium ${styles["song"]} mg-t-1 ${
+        isPlayerPageOpen ? styles["song-page-full"] : styles["song-page-close"]
+      }`}>
+      No data found.
+    </p>
+  );
 
   return (
     // <Spinner thin fullScreen />

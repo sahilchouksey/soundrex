@@ -56,6 +56,7 @@ export default function Popup({
   onClick,
   notCloseable = false,
   autoClose = false,
+  triggerContent,
 }) {
   const [open, setOpen] = useState(false);
 
@@ -76,8 +77,13 @@ export default function Popup({
   }, [notCloseable, autoClose]);
 
   return (
-    <div>
-      {!notCloseable && (
+    <div className={triggerContent && "full-hw "}>
+      {triggerContent && (
+        <div className={triggerContent && "full-hw"} onClick={handleClickOpen}>
+          {triggerContent}
+        </div>
+      )}
+      {!triggerContent && !notCloseable && (
         <Button
           // variant="outlined"
           onClick={handleClickOpen}
@@ -101,7 +107,7 @@ export default function Popup({
           </BootstrapDialogTitle>
         )}
 
-        <DialogContent dividers>
+        <DialogContent dividers className={triggerContent && "mg-b-10"}>
           {content}
           {/* <Typography gutterBottom>
             Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
@@ -121,7 +127,7 @@ export default function Popup({
         </DialogContent>
         <DialogActions>
           {/* <Actions onClick={!notCloseable && handleClose} /> */}
-          {!notCloseable && (
+          {!triggerContent && !notCloseable && (
             <Fragment>
               <MyButton
                 onClick={!notCloseable ? handleClose : () => {}}
