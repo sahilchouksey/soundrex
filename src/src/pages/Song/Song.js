@@ -533,14 +533,6 @@ function Song({
       );
     }
   }
-  content = (
-    <p
-      className={`centered capitalize text-medium ${styles["song"]} mg-t-1 ${
-        isPlayerPageOpen ? styles["song-page-full"] : styles["song-page-close"]
-      }`}>
-      No data found.
-    </p>
-  );
 
   return (
     // <Spinner thin fullScreen />
