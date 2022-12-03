@@ -1,0 +1,48 @@
+{
+  "name": "@storybook/preset-create-react-app",
+  "version": "4.1.2",
+  "description": "Create React App preset for Storybook",
+  "license": "MIT",
+  "main": "dist",
+  "types": "dist",
+  "homepage": "https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app",
+  "bugs": {
+    "url": "https://github.com/storybookjs/presets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/presets.git",
+    "directory": "packages/preset-create-react-app"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "build-watch": "yarn build -w",
+    "build-storybook": "exit 0;",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@types/babel__core": "^7.1.7",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "pnp-webpack-plugin": "^1.7.0",
+    "@storybook/react-docgen-typescript-plugin": "canary",
+    "semver": "^7.3.5"
+  },
+  "devDependencies": {
+    "@storybook/node-logger": "^6.3.2",
+    "@types/semver": "^7.3.6",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "*",
+    "@storybook/node-logger": "*",
+    "@storybook/react": ">=5.2",
+    "react-scripts": ">=5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
