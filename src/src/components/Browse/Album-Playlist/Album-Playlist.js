@@ -73,7 +73,7 @@ function Album_Playlist({
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/soundrex/is-liked`,
+          url: `https://soundrex.onrender.com/soundrex/is-liked`,
           method: "POST",
           headers: {
             authorization: "Bearer " + token,

@@ -141,7 +141,7 @@ const SignupPage = ({
         setAuthLoading(true);
         setAccountCreatedSuccessfully(false);
         // await toast.promise(
-        await axios.put("https://soundrex.herokuapp.com/auth/signup", {
+        await axios.put("https://soundrex.onrender.com/auth/signup", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

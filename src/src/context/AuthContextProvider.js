@@ -131,7 +131,7 @@ function ContextProvider({children}) {
       // id = toast.loading("Logging in...");
       const options = {
         method: "POST",
-        url: "https://soundrex.herokuapp.com/auth/is-auth",
+        url: "https://soundrex.onrender.com/auth/is-auth",
         headers: {
           authorization: "Bearer " + token,
         },
@@ -285,7 +285,7 @@ function ContextProvider({children}) {
         await toast.promise(
           fetcher(
             {
-              url: `https://soundrex.herokuapp.com/soundrex/like`,
+              url: `https://soundrex.onrender.com/soundrex/like`,
               method: "POST",
               headers: {
                 authorization: "Bearer " + token,
@@ -355,7 +355,7 @@ function ContextProvider({children}) {
         await toast.promise(
           fetcher(
             {
-              url: `https://soundrex.herokuapp.com/soundrex/remove-like`,
+              url: `https://soundrex.onrender.com/soundrex/remove-like`,
               method: "POST",
               headers: {
                 authorization: "Bearer " + token,

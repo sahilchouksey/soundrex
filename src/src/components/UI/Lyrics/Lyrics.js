@@ -1,4 +1,4 @@
-// https://soundrex.herokuapp.com/api/v1/lyrics/browse?id=MPLYt_pXdkrQjy7tN
+// https://soundrex.onrender.com/api/v1/lyrics/browse?id=MPLYt_pXdkrQjy7tN
 import {Fragment, useContext} from "react";
 import {useQuery} from "react-query";
 
@@ -42,7 +42,7 @@ function Lyrics({browseId, logout}) {
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/api/v1/lyrics/browse?id=${browseId}`,
+          url: `https://soundrex.onrender.com/api/v1/lyrics/browse?id=${browseId}`,
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

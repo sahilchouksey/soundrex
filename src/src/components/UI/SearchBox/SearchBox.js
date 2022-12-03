@@ -117,7 +117,7 @@ const SearchBox = forwardRef(({onClose, isOpen, logout}, ref) => {
         setIsLoading(true);
 
         getSuggestions.mutate({
-          url: `https://soundrex.herokuapp.com/api/v1/search_suggestions?query=${input}`,
+          url: `https://soundrex.onrender.com/api/v1/search_suggestions?query=${input}`,
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

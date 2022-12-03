@@ -25,7 +25,7 @@ function Artist({token, logout}) {
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/api/v1/browse?id=${browseId}${
+          url: `https://soundrex.onrender.com/api/v1/browse?id=${browseId}${
             params ? "&params=" + params : ""
           }`,
           method: "GET",

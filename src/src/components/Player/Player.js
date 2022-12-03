@@ -30,7 +30,7 @@ import PlayerSongDataStyles from "./PlayerSongData/PlayerSongData.module.scss";
 import Like from "../UI/Icon/Icon";
 
 const audioUrl = videoId =>
-  `https://soundrex.herokuapp.com/api/v1/audio?id=${videoId}`;
+  `https://soundrex.onrender.com/api/v1/audio?id=${videoId}`;
 
 function ErrorText({text}) {
   return (
@@ -95,7 +95,7 @@ function Player({
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/soundrex/is-liked`,
+          url: `https://soundrex.onrender.com/soundrex/is-liked`,
           method: "POST",
           headers: {
             authorization: "Bearer " + token,
@@ -339,7 +339,7 @@ function Player({
   //   title &&
   //     videoId &&
   //     axios.get(
-  //       `https://soundrex.herokuapp.com/api/v1/audio-download?id=${videoId}&title=${title
+  //       `https://soundrex.onrender.com/api/v1/audio-download?id=${videoId}&title=${title
   //         ?.replace(/[^a-zA-Z ]/g, "")
   //         ?.replace(" ", "+")}`
   //     );
@@ -586,7 +586,7 @@ function Player({
               href={
                 title &&
                 videoId &&
-                `https://soundrex.herokuapp.com/api/v1/audio-download?id=${videoId}&title=${title
+                `https://soundrex.onrender.com/api/v1/audio-download?id=${videoId}&title=${title
                   ?.replace(/[^a-zA-Z ]/g, "")
                   ?.replace(" ", "+")}`
               }

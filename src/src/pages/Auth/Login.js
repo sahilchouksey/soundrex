@@ -115,7 +115,7 @@ const LoginPage = ({
         setLoggedInSuccessfully(false);
         // await toast.promise(
         const {data: loginData} = await axios.post(
-          "https://soundrex.herokuapp.com/auth/login",
+          "https://soundrex.onrender.com/auth/login",
           {
             method: "POST",
             headers: {

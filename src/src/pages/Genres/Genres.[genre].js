@@ -22,7 +22,7 @@ function Genres({token, logout}) {
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/api/v1/genre/browse?id=${browseId}&params=${params}`,
+          url: `https://soundrex.onrender.com/api/v1/genre/browse?id=${browseId}&params=${params}`,
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

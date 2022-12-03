@@ -45,7 +45,7 @@ const Add_to_queue = ({
       () => {
         return fetcher(
           {
-            url: "https://soundrex.herokuapp.com/api/v1/audio/get_queue",
+            url: "https://soundrex.onrender.com/api/v1/audio/get_queue",
             method: "POST",
             // headers: {
             //   // authorization: "Bearer " + token,
@@ -97,7 +97,7 @@ const Add_to_queue = ({
     () =>
       fetcher(
         {
-          url: "https://soundrex.herokuapp.com/api/v1/audio/get_queue",
+          url: "https://soundrex.onrender.com/api/v1/audio/get_queue",
           method: "POST",
           // headers: {
           //   // authorization: "Bearer " + token,

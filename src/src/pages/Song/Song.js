@@ -93,7 +93,7 @@ function Song({
     () => {
       return fetcher(
         {
-          url: `https://soundrex.herokuapp.com/api/v1/audio/next${
+          url: `https://soundrex.onrender.com/api/v1/audio/next${
             id ? `?id=${id}` : ""
           }${
             validlist
@@ -252,7 +252,7 @@ function Song({
         if (upNextSongs?.length > 1 && lastSongId === id) {
           if (nextListContinuation) {
             getNextContinuationList.mutate({
-              url: `https://soundrex.herokuapp.com/api/v1/audio/next${
+              url: `https://soundrex.onrender.com/api/v1/audio/next${
                 id ? `?id=${id}` : ""
               }${
                 list
@@ -312,7 +312,7 @@ function Song({
           // }
 
           return getAutomixList.mutate({
-            url: `https://soundrex.herokuapp.com/api/v1/audio/next${
+            url: `https://soundrex.onrender.com/api/v1/audio/next${
               videoId ? `?id=${videoId}` : ""
             }${
               playlistId
@@ -563,7 +563,7 @@ export default Song;
 // const changeSong = useMutation(
 //   params =>
 //     ({
-//       url: `https://soundrex.herokuapp.com/api/v1/audio/next${id ? `?id=${id}` : ""}${
+//       url: `https://soundrex.onrender.com/api/v1/audio/next${id ? `?id=${id}` : ""}${
 //         list
 //           ? `${!id ? "?" : "&"}playlistId=${list}${
 //               params >= 0 ? `&idx=${params}` : ""
