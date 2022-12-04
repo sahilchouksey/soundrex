@@ -1,0 +1,14 @@
+@import "../../../styles/mixins.scss";
+.logo {
+  height: calc(100% / 1.5);
+  margin-left: -1.5rem;
+  cursor: pointer;
+
+  @include respond(phone) {
+    margin-left: 0;
+  }
+
+  @include respond(vsm-dev) {
+    margin-left: -1rem;
+  }
+}

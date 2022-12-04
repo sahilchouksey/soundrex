@@ -1,0 +1,17 @@
+.music-card-list {
+  list-style: none;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22.5rem, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+  row-gap: 5rem;
+  -webkit-column-gap: 2.5rem;
+  column-gap: 2.5rem;
+}
+
+.music-card-carousel-list {
+  list-style: none;
+  position: relative;
+}
+/*# sourceMappingURL=MusicShelfList.module.css.map */

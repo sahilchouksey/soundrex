@@ -1,0 +1,24 @@
+.music-shelf {
+  position: relative;
+}
+
+.music-shelf-title {
+  color: var(--clr-white);
+}
+
+.music-shelf-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.music-shelf:not(:first-child) {
+  margin-top: 5rem;
+}
+/*# sourceMappingURL=MusicShelf.module.css.map */

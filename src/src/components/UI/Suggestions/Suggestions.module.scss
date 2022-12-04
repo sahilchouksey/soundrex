@@ -1,0 +1,73 @@
+@import "../../../styles/mixins.scss";
+.suggestions {
+  position: absolute;
+  top: 100%;
+  display: grid;
+  grid-auto-rows: 7rem;
+  width: 100%;
+  background-color: var(--clr-search-box-bg);
+  border: 1px solid var(--clr-placeholder);
+  border-top: none;
+  border-radius: 0 0 var(--button-radius) var(--button-radius);
+  list-style: none;
+  &-item {
+    // ;
+  }
+}
+
+.suggestion {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &-box {
+    --background: var(--clr-search-box-bg);
+    height: 100%;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    // color: white;
+    text-align: start;
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+  }
+
+  &-text {
+    padding: 0 5.6rem 0 1rem;
+    overflow: clip;
+    text-overflow: ellipsis;
+    color: inherit;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+  }
+
+  &-icon {
+    &-container {
+      color: var(--clr-search-box-bg);
+      // backgound-color: var(--clr-search-box-bg);
+      width: 4vw;
+      min-width: 6rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}

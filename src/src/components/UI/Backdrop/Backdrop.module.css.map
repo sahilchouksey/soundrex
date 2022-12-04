@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,EAAE;EACX,UAAU,EAAE,mBAAmB;EAC/B,MAAM,EAAE,OAAO;CAChB",
+    "sources": [
+        "Backdrop.module.scss"
+    ],
+    "names": [],
+    "file": "Backdrop.module.css"
+}

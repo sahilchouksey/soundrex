@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,QAAQ,EAAE,QAAQ;CAanB;;AAZE,AAAD,kBAAO,CAAC;EACN,KAAK,EAAE,gBAAgB;CACxB;;AACA,AAAD,mBAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CACpB;;AATH,AAWE,YAXU,AAWT,IAAK,CAAA,YAAY,EAAE;EAClB,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "MusicShelf.module.scss"
+    ],
+    "names": [],
+    "file": "MusicShelf.module.css"
+}

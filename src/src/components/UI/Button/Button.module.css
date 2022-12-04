@@ -1,0 +1,45 @@
+.button, .button:link, .button:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button:hover, .button:active {
+  color: var(--clr-white) !important;
+}
+
+.button-animate:hover, .button-animate:active {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: var(--clr-hover);
+}
+
+.button-animate:active {
+  background-color: var(--clr-secondary);
+}
+
+.button-tertiary {
+  background-color: transparent;
+  height: 6rem;
+  width: 10rem;
+  border-radius: var(--button-radius);
+}
+/*# sourceMappingURL=Button.module.css.map */

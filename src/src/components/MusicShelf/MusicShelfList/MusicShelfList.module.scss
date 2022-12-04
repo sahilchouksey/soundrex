@@ -1,0 +1,81 @@
+@import "../../../styles/mixins.scss";
+.music-card-list {
+  list-style: none;
+  position: relative;
+  // min-height: 32rem;
+  display: grid;
+  // column-gap: 5rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--soundrex-square-card-width), 1fr)
+  ) !important;
+
+  row-gap: 5rem;
+  column-gap: 2.5rem;
+
+  @include respond(phone) {
+    column-gap: 5px !important;
+    --soundrex-square-card-width: calc(100vw / 3);
+    // --soundrex-square-card-height: calc(100vh / 2.75);
+    --soundrex-square-card-height: auto;
+  }
+
+  // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  // grid-gap: 6rem;
+}
+
+.music-card-carousel-list {
+  list-style: none;
+  position: relative;
+  min-height: calc(var(--soundrex-square-card-height) + 5px);
+
+  @include respond(phone) {
+    --soundrex-rectangle-card-width: calc(100vw / 2);
+    --soundrex-rectangle-card-height: calc(100vh / 2.75);
+  }
+}
+
+.slider {
+  list-style: none;
+  // position: relative;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  width: calc(var(--side-space) + 100%);
+  // overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  padding-right: 3rem;
+  // overflow-x: scroll;
+
+  // height: calc(
+  //   var(--soundrex-carousel-slider-item-per-column) *
+  //     var(--soundrex-rectangle-card-height) +
+  //     var(--soundrex-carousel-slider-item-margin-bottom) *
+  //     (var(--soundrex-carousel-slider-item-per-column) - 1)
+  // );
+  flex-flow: column wrap;
+
+  &:nth-child(1) {
+    margin-right: 1.75rem !important;
+    margin-bottom: var(
+      --soundrex-carousel-slider-item-margin-bottom
+    ) !important;
+  }
+
+  & > * {
+    // &:not(:first-child) {
+    margin-right: 1.75rem !important;
+    margin-bottom: var(
+      --soundrex-carousel-slider-item-margin-bottom
+    ) !important;
+    // }
+
+    // &:not(:last-child) {
+    // }
+  }
+
+  // & li {
+  // }
+}

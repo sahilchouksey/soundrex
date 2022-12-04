@@ -1,0 +1,29 @@
+.menu {
+  &-item {
+    position: relative;
+    min-height: 4.5rem !important;
+    // min-height: 100%;
+    width: 100%;
+    padding: 0 5px !important;
+
+    // padding: 0;
+
+    &-icon {
+      height: 2.35rem;
+      width: 2.35rem;
+    }
+
+    // &:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4.5rem 0 1.85rem !important ;
+    & span {
+    }
+    // }
+    &-contributors {
+      padding: 0 3.25rem 0 1.25rem !important;
+      min-height: 5.5rem !important;
+    }
+  }
+}

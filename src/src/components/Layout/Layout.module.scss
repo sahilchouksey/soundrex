@@ -1,0 +1,29 @@
+@import "../../styles/mixins.scss";
+
+.container {
+  --row-gap: 4rem;
+  --column-gap: 2rem;
+  display: grid;
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
+  grid-template-rows: var(--navbar-height) min-content;
+  grid-template-columns:
+    [full-start] minmax(var(--side-space), 1fr) [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(var(--side-space), 1fr) [full-end];
+
+  @include respond(tab-port) {
+    --row-gap: 3rem;
+    --column-gap: 1rem;
+  }
+
+  @include respond(phone) {
+    --column-gap: 5px;
+  }
+
+  @include respond(vsm-dev) {
+    --column-gap: 0px;
+  }
+}

@@ -1,0 +1,155 @@
+@import "../../../styles/mixins.scss";
+
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+
+  &-active {
+    color: var(--clr-white);
+  }
+
+  .nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: var(--clr-light-white);
+    transition: all 0.3s;
+
+    & svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: var(--clr-light-white) !important;
+    }
+    &-text {
+      display: block;
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+
+    &-icon {
+      display: none;
+      @include respond(tab-port) {
+        // &:not(:last-child) {
+        //   margin-right: 2.25rem;
+        // }
+        display: block;
+      }
+    }
+
+    &-logo {
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0px;
+      width: 0rem;
+      border-radius: 8px;
+      background-color: currentColor;
+      bottom: 15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        width: 2rem;
+        height: 2.5px;
+      }
+    }
+
+    &-active {
+      & svg {
+        fill: var(--clr-white) !important;
+      }
+      color: var(--clr-white) !important;
+    }
+    &-active {
+      &:hover,
+      &:active {
+        &::after {
+          height: 2.5px;
+
+          width: 100%;
+        }
+      }
+      &::after {
+        height: 2.5px;
+
+        width: 100%;
+      }
+    }
+  }
+
+  .nav-btn {
+    // z-index: -1;
+
+    color: currentColor;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid transparent;
+    border-radius: var(--button-radius);
+    background: transparent;
+    // height: 70%;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+
+    transition: all 0.3s;
+
+    &:first-child {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      background-color: var(--clr-hover) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    &-settings {
+      border-radius: 50rem;
+      height: 85%;
+      width: 85%;
+      justify-content: center;
+
+      &:hover {
+        background-color: var(--clr-hover) !important;
+        border: 1px solid rgba(190, 123, 123, 0.2) !important;
+      }
+    }
+  }
+}
+
+.nav-btn {
+  // z-index: -1;
+
+  color: currentColor;
+  height: 80%;
+  width: 100%;
+  border: 1px solid transparent !important;
+  border-radius: var(--button-radius) !important;
+  background: transparent !important;
+
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--clr-hover) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+}
+
+.setting-menu {
+  left: -7.25rem !important;
+  max-width: 20rem !important;
+  @include respond(phone) {
+    left: -4rem !important;
+  }
+}

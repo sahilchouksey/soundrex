@@ -1,0 +1,239 @@
+@import "../../../styles/mixins.scss";
+.artist {
+  &-wrapper {
+    // position: relative;
+    --top-gap: -4rem;
+    --thumbnail-size: 40rem;
+    // --description-width: 640px;
+    display: grid;
+    row-gap: 3rem;
+
+    @include respond(tab-port) {
+      --thumbnail-size: 35.5rem;
+    }
+
+    @include respond(phone) {
+      --thumbnail-size: 30rem;
+    }
+
+    @include respond(sm-dev) {
+      --thumbnail-size: 24rem;
+    }
+  }
+
+  &-header {
+    padding: 2.25rem 0;
+    min-height: var(--thumbnail-size);
+    margin-top: var(--top-gap);
+    // overflow: hidden;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: "title actions";
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-content: flex-end;
+    z-index: 1;
+
+    @include respond(tab-port) {
+      grid-template-areas:
+        "title title"
+        "actions actions";
+
+      row-gap: 1rem;
+      // grid-template-rows: 1fr 1fr;
+    }
+
+    @include respond(sm-dev) {
+      row-gap: 2.25rem;
+    }
+    // display: flex;
+    // align-items: flex-end;
+    // justify-content: space-between;
+    // flex-direction: column;
+
+    // &__description {
+    //   &-less {
+    //     line-height: var(--body-line-height);
+    //     width: 100%;
+    //     margin: 8px 0 0;
+    //     transition: all 0.4s;
+    //   }
+
+    //   &-more {
+    //     margin: 8px 0 0;
+    //     width: 100%;
+
+    //     display: block;
+    //     display: -webkit-box;
+    //     -webkit-line-clamp: 2;
+    //     -webkit-box-orient: vertical;
+    //     overflow: hidden;
+    //     white-space: normal;
+    //     // max-height: calc(2 * 14px * var(--body-line-height));
+    //     max-height: max-content;
+    //     transition: all 0.4s;
+    //   }
+    // }
+
+    &-actions {
+      --size: 6rem;
+      --size-icon: calc((var(--size) / 2.15));
+      min-width: 34rem;
+      margin-bottom: 1rem;
+      grid-area: actions;
+      justify-self: flex-end;
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      justify-content: center;
+      &-play {
+        height: var(--size);
+        min-width: var(--size);
+        margin-right: 1.25rem;
+        &-icon {
+          width: var(--size-icon);
+          height: var(--size-icon);
+        }
+      }
+
+      &-like {
+        min-width: 8.8rem;
+        & span {
+          margin: 0 0 0 8px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      @include respond(tab-port) {
+        justify-content: flex-start;
+
+        justify-self: flex-start;
+        --size: 5.25rem;
+      }
+
+      @include respond(sm-dev) {
+        min-width: unset;
+        width: 100%;
+
+        --size: 4.8rem;
+      }
+    }
+
+    &__content {
+      align-self: flex-end;
+      max-width: 47.5vw;
+      grid-area: title;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+
+      @include respond(tab-port) {
+        max-width: 100%;
+      }
+    }
+    &-title {
+      width: 100%;
+      position: relative;
+      overflow: clip;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @include respond(phone) {
+        --typo-display-large: 4rem;
+      }
+
+      @include respond(sm-dev) {
+        --typo-display-large: 3.6rem;
+      }
+    }
+    // &-picture {
+    // }
+    &-thumbnail {
+      filter: brightness(0.4);
+      max-height: var(--thumbnail-size);
+      position: absolute;
+      top: var(--navbar-height);
+      left: 50%;
+      transform: translateX(-50%);
+      // height: 42vh;
+      width: 100%;
+      // width: 100vw;
+      object-fit: cover;
+      object-position: top;
+
+      @include respond(tab-port) {
+        filter: brightness(0.3);
+        --thumbnail-size: 35.5rem;
+      }
+
+      @include respond(phone) {
+        filter: brightness(0.2);
+        --thumbnail-size: 30rem;
+      }
+
+      @include respond(sm-dev) {
+        --thumbnail-size: 24rem;
+      }
+
+      background-image: linear-gradient(
+        270deg,
+        rgba(94, 96, 206, 0.1875) 0%,
+        rgba(86, 207, 225, 0.0625) 100%
+      );
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+
+      &::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  // &-description {
+  //   color: var(--clr-white);
+  //   max-width: var(--description-width);
+  // }
+
+  &-contents {
+    & > * {
+      &:not(:first-child) {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  &-content {
+    --content-size: 85%;
+
+    &-header {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+
+      & a {
+        color: var(--clr-white) !important;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+
+      // & .music-shelf-button {
+      //   &:hover,
+      //   &:active {
+      //     text-decoration: none !important;
+      //   }
+      // }
+      & p {
+      }
+    }
+  }
+}

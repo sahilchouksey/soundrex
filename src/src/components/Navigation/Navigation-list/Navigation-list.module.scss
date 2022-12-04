@@ -1,0 +1,66 @@
+@import "../../../styles/mixins.scss";
+
+.nav-list {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  z-index: 150;
+
+  &-start {
+    // z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--navbar-height);
+    width: 100%;
+    &:first-child {
+      & a {
+        margin-right: 2.5rem;
+      }
+    }
+
+    @include respond(tab-port) {
+      &:first-child {
+        & a {
+          margin-right: 4rem;
+        }
+      }
+      // &:first-child {
+      // }
+    }
+
+    @include respond(vsm-dev) {
+      position: relative;
+
+      &:first-child {
+        & a {
+          margin-right: 1.75rem;
+        }
+      }
+    }
+
+    &:last-child {
+      & a {
+        margin-left: 2.5rem;
+      }
+    }
+  }
+
+  &-end {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      & a {
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

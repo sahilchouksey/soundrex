@@ -1,0 +1,56 @@
+@import "../../../styles/mixins.scss";
+
+.music-card-box {
+  &-container {
+    min-height: 12.5rem !important;
+    height: var(--soundrex-rectangle-card-height) !important;
+    width: var(--soundrex-rectangle-card-width) !important;
+    min-width: 12.5rem;
+
+    @include respond(phone) {
+      min-height: 9.5rem !important;
+
+      max-height: 12.5rem !important;
+    }
+  }
+  cursor: pointer;
+
+  // text-transform: capitalize;
+  color: var(--clr-primary);
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  --hover: var(--clr-hover);
+
+  &:hover,
+  &:focus {
+    background-color: rgba(var(--hover), 0.2);
+  }
+
+  &__title {
+    text-align: start !important;
+    flex-grow: 1;
+
+    max-width: 65%;
+    overflow: clip;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__img {
+    border-radius: var(--button-radius);
+    object-fit: cover;
+    // height: 90%;
+    // width: 10rem;
+    height: calc(100% / 1.25);
+    width: calc(100% / 3.75);
+    margin-left: 0.5rem;
+  }
+}

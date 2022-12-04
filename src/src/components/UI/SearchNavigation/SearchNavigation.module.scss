@@ -1,0 +1,59 @@
+@import "../../../styles/mixins.scss";
+.search-navigation {
+  &-list {
+    // display: flex;
+    // align-items: center;
+    // overflow-x: auto;
+  }
+
+  &-item {
+    margin: 6px 3rem 6px 0; // top right bottom left
+    display: inline-block;
+
+    @include respond(phone) {
+      margin-right: 2.5rem;
+    }
+
+    @include respond(sm-dev) {
+      margin-right: 2rem;
+    }
+  }
+
+  &-link {
+    padding: 5px 8px;
+    text-transform: capitalize !important;
+    min-height: 4.2rem;
+    min-width: 6.5rem;
+    width: 10rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    // color: #fff;
+
+    @include respond(phone) {
+      width: 7.5rem;
+    }
+
+    @include respond(sm-dev) {
+      // min-width: 4rem;
+      width: 7.2rem;
+      // width: calc(100vw / 6);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    &-active {
+      background-color: #c4c4c4;
+      color: #212121 !important;
+
+      &:hover,
+      &:focus {
+        color: #212121 !important;
+        background-color: #f1f1f1;
+      }
+    }
+  }
+}
