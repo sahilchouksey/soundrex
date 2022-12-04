@@ -113,8 +113,8 @@ function ContextProvider({children}) {
     setTopBoxMessage(null);
 
     try {
-      const token = localStorage.getItem("token");
-      const expiryDate = localStorage.getItem("expiryDate");
+      const token = window.localStorage.getItem("token");
+      const expiryDate = window.localStorage.getItem("expiryDate");
       if (!token || !expiryDate) {
         console.log("Invalid Token OR Expiry date");
         throw new Error("Invalid Token OR Expiry date");
@@ -169,7 +169,7 @@ function ContextProvider({children}) {
         },
       });
 
-      const userId = localStorage.getItem("userId");
+      const userId = window.localStorage.getItem("userId");
       const remainingMilliseconds =
         new Date(expiryDate).getTime() - new Date().getTime();
       editAuthConf({
@@ -229,9 +229,9 @@ function ContextProvider({children}) {
 
   const logout = useCallback(() => {
     editAuthConf({isAuth: false, token: null, username: null});
-    localStorage.removeItem("token");
-    localStorage.removeItem("expiryDate");
-    localStorage.removeItem("userId");
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("expiryDate");
+    window.localStorage.removeItem("userId");
     toast.error("Logged out.", {
       type: "error",
       isLoading: false,

@@ -133,8 +133,8 @@ const LoginPage = ({
 
         // initLibrary(loginData.library);
 
-        localStorage.setItem("token", loginData.token);
-        localStorage.setItem("userId", loginData.userId);
+        window.localStorage.setItem("token", loginData.token);
+        window.localStorage.setItem("userId", loginData.userId);
 
         const remainingMiliseconds = 60 * 60 * 1000; // 60 * 60 * 1000
 
@@ -142,7 +142,7 @@ const LoginPage = ({
           new Date().getTime() + remainingMiliseconds
         );
 
-        localStorage.setItem("expiryDate", expiryDate.toString());
+        window.localStorage.setItem("expiryDate", expiryDate.toString());
 
         setTimeoutFunc(setAutoLogout(remainingMiliseconds));
 

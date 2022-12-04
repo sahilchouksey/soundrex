@@ -552,12 +552,12 @@ export default Song;
 // window.localStorage
 // useEffect(() => {
 //   if (isSuccess && data && Object.keys(data).length > 0) {
-//     window.localStorage.setItem("player-song", JSON.stringify(data));
+//     window.window.localStorage.setItem("player-song", JSON.stringify(data));
 //   }
 // }, [isSuccess, id]);
 
 // useEffect(() => {
-//   window.localStorage.removeItem("player-song");
+//   window.window.localStorage.removeItem("player-song");
 // }, [id]);
 
 // const changeSong = useMutation(

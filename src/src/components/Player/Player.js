@@ -67,9 +67,9 @@ function Player({
   const [isAudioReady, setIsAudioReady] = useState(false);
   const [audioError, setAudioError] = useState(false);
 
-  const localStorageHasVolume = localStorage.getItem("volume") || 0.65;
+  const asVolume = window.localStorage.getItem("volume") || 0.65;
 
-  const [volume, setVolume] = useState(localStorageHasVolume);
+  const [volume, setVolume] = useState(asVolume);
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -498,8 +498,8 @@ function Player({
           }, 1500);
         }}
         onLoadStart={e => {
-          if (localStorageHasVolume) {
-            setVolume(Number(localStorageHasVolume));
+          if (asVolume) {
+            setVolume(Number(asVolume));
           }
           setIsAudioReady(false);
           setAudioError(false);
@@ -515,7 +515,7 @@ function Player({
         }}
         onVolumeChange={e => {
           const curVolume = e.target.volume;
-          localStorage.setItem("volume", curVolume);
+          window.localStorage.setItem("volume", curVolume);
           setVolume(curVolume);
         }}
         onError={e => {
