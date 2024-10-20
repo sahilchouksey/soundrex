@@ -35,7 +35,7 @@ function Favourites({
     () => {
       return fetcher(
         {
-          url: "https://soundrex.onrender.com/soundrex/favourites",
+          url: "https://backend-soundrex.sahilchouksey.in/soundrex/favourites",
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

@@ -34,7 +34,7 @@ const SEARCH_NAVIGATION = [
 ];
 
 const searchQueryUrl = (searchQuery, searchTerm, rawParams) => {
-  let url = `https://soundrex.onrender.com/api/v1/search?query=${searchQuery}`;
+  let url = `https://backend-soundrex.sahilchouksey.in/api/v1/search?query=${searchQuery}`;
   if (searchTerm) {
     url = url + `&params=${searchTerm.toUpperCase()}`;
   }
@@ -44,7 +44,7 @@ const searchQueryUrl = (searchQuery, searchTerm, rawParams) => {
   return url;
 };
 const nextResultsUrl = ({ctoken, continuation, itct}) =>
-  `https://soundrex.onrender.com/api/v1/search_next?ctoken=${ctoken}&continuation=${continuation}&type=next&itct=${itct}`;
+  `https://backend-soundrex.sahilchouksey.in/api/v1/search_next?ctoken=${ctoken}&continuation=${continuation}&type=next&itct=${itct}`;
 
 const fetchSearchResults = (searchQuery, searchTerm, params, token) => {
   return fetcher(

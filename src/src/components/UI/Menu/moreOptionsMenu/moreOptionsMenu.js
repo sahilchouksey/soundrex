@@ -109,6 +109,7 @@ function MoreOptionaMenu({
 
   const history = useHistory();
 
+  console.info(menuOptions)
   const menuItems = menuOptions.map((option, i) => {
     const menu = iconsForMenus.find(m => {
       return (

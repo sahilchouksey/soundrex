@@ -115,7 +115,7 @@ const LoginPage = ({
         setLoggedInSuccessfully(false);
         // await toast.promise(
         const {data: loginData} = await axios.post(
-          "https://soundrex.onrender.com/auth/login",
+          "https://backend-soundrex.sahilchouksey.in/auth/login",
           {
             method: "POST",
             headers: {

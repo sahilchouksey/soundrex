@@ -1,0 +1,5 @@
+lib/
+es/
+docs/
+babel.config.js
+server.js

@@ -41,7 +41,7 @@ function Home({rootElementRef, token, logout}) {
     () => {
       return fetcher(
         {
-          url: "https://soundrex.onrender.com/api/v1/home/browse/all",
+          url: "https://backend-soundrex.sahilchouksey.in/api/v1/home/browse/all",
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

@@ -6,10 +6,10 @@ import {
   memo,
   useContext,
 } from "react";
-import {useQuery} from "react-query";
-import {useHistory} from "react-router-dom";
+import { useQuery } from "react-query";
+import { useHistory } from "react-router-dom";
 
-import {fetcher, hasLoginError} from "../../../functions/requestFetcher";
+import { fetcher, hasLoginError } from "../../../functions/requestFetcher";
 
 import RowMusicShelfList from "../../RowMusicShelf/RowMusicShelfList/RowMusicShelfList";
 import Image from "../../UI/Image/Image";
@@ -73,7 +73,7 @@ function Album_Playlist({
     () => {
       return fetcher(
         {
-          url: `https://soundrex.onrender.com/soundrex/is-liked`,
+          url: `https://backend-soundrex.sahilchouksey.in/soundrex/is-liked`,
           method: "POST",
           headers: {
             authorization: "Bearer " + token,
@@ -131,7 +131,7 @@ function Album_Playlist({
     }
   }, [isSuccess, isLikedData, browseId]);
 
-  const header = data?.header;
+  let header = data?.header;
   const rawTitle = header?.title?.length > 0 && getTitleFromArr(header?.title);
   const currentThumbnail =
     header?.thumbnails?.[0]?.url ||
@@ -148,17 +148,17 @@ function Album_Playlist({
     () =>
       isLiked && rawTitle
         ? removeFromFavouritesHandler(
-            browseId,
-            () => setIsLiked("loading"),
-            () => setIsLiked(false),
-            () => setIsLiked(true)
-          )
+          browseId,
+          () => setIsLiked("loading"),
+          () => setIsLiked(false),
+          () => setIsLiked(true)
+        )
         : addToFavouritesHandler(
-            handlerData,
-            () => setIsLiked("loading"),
-            () => setIsLiked(true),
-            () => setIsLiked(false)
-          ),
+          handlerData,
+          () => setIsLiked("loading"),
+          () => setIsLiked(true),
+          () => setIsLiked(false)
+        ),
     [
       isLiked,
       rawTitle,
@@ -305,7 +305,7 @@ function Album_Playlist({
     <div className={styles["album-playlist-wrapper"]}>
       {/* // head */}
 
-      {header && (
+      {header && header?.thumbnails?.length > 0 && (header?.title?.length > 0 || header?.title) && (
         <div className={styles["album-playlist-header"]}>
           <div className={styles["album-playlist-header__img-wrapper"]}>
             {header?.thumbnails?.length > 0 && (
@@ -314,7 +314,7 @@ function Album_Playlist({
                 alt={""}
                 className={styles["album-playlist-header__img"]}
                 sources={header.thumbnails}
-                // pictureClassname={"full-hw"}
+              // pictureClassname={"full-hw"}
               />
             )}
           </div>
@@ -338,11 +338,10 @@ function Album_Playlist({
                 <div
                   className={
                     styles[
-                      isDescriptionLengthy
-                        ? `album-playlist-header__description-${
-                            isShowingMoreDescription ? "less" : "more"
-                          }`
-                        : `album-playlist-header__description-more`
+                    isDescriptionLengthy
+                      ? `album-playlist-header__description-${isShowingMoreDescription ? "less" : "more"
+                      }`
+                      : `album-playlist-header__description-more`
                     ]
                   }>
                   {description}
@@ -423,7 +422,7 @@ function areEqual(prevProps, nextProps) {
     prevProps?.browseId === nextProps?.browseId &&
     prevProps?.addToFavouritesHandler === nextProps?.addToFavouritesHandler &&
     prevProps?.removeFromFavouritesHandler ===
-      nextProps?.removeFromFavouritesHandler
+    nextProps?.removeFromFavouritesHandler
   );
 }
 

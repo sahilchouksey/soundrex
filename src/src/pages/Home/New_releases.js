@@ -15,7 +15,7 @@ function New_releases({token, logout}) {
     () => {
       return fetcher(
         {
-          url: "https://soundrex.onrender.com/api/v1/home/browse/new_releases",
+          url: "https://backend-soundrex.sahilchouksey.in/api/v1/home/browse/new_releases",
           method: "GET",
           headers: {
             authorization: "Bearer " + token,

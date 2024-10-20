@@ -41,7 +41,7 @@ function Related({browseId, logout}) {
     () => {
       return fetcher(
         {
-          url: `https://soundrex.onrender.com/api/v1/browse?id=${browseId}`,
+          url: `https://backend-soundrex.sahilchouksey.in/api/v1/browse?id=${browseId}`,
           method: "GET",
           headers: {
             authorization: "Bearer " + token,
