@@ -2705,7 +2705,7 @@
                       ? (E(!1),
                         M(!0),
                         A.mutate({
-                          url: "https://soundrex.onrender.com/api/v1/search_suggestions?query=".concat(
+                          url: "https://backend-soundrex.sahilchouksey.in/api/v1/search_suggestions?query=".concat(
                             a
                           ),
                           method: "GET",
@@ -3559,7 +3559,7 @@
             function () {
               return te(
                 {
-                  url: "https://soundrex.onrender.com/api/v1/audio/get_queue",
+                  url: "https://backend-soundrex.sahilchouksey.in/api/v1/audio/get_queue",
                   method: "POST",
                   data: j,
                 },
@@ -6611,7 +6611,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/home/browse/new_releases",
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/home/browse/new_releases",
                     method: "GET",
                     headers: {authorization: "Bearer " + t},
                   },
@@ -6735,7 +6735,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/home/browse/all",
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/home/browse/all",
                     method: "GET",
                     headers: {authorization: "Bearer " + n},
                   },
@@ -7067,7 +7067,7 @@
             function () {
               return te(
                 {
-                  url: "https://soundrex.onrender.com/api/v1/genre/browse?id="
+                  url: "https://backend-soundrex.sahilchouksey.in/api/v1/genre/browse?id="
                     .concat(o, "&params=")
                     .concat(l),
                   method: "GET",
@@ -7246,7 +7246,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/home/browse/genres",
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/home/browse/genres",
                     method: "GET",
                     headers: {authorization: "Bearer " + n},
                   },
@@ -7445,7 +7445,7 @@
           {text: "Artists"},
         ],
         ho = function (e, t, n) {
-          var a = "https://soundrex.onrender.com/api/v1/search?query=".concat(
+          var a = "https://backend-soundrex.sahilchouksey.in/api/v1/search?query=".concat(
             e
           );
           return (
@@ -7458,7 +7458,7 @@
           var t = e.ctoken,
             n = e.continuation,
             a = e.itct;
-          return "https://soundrex.onrender.com/api/v1/search_next?ctoken="
+          return "https://backend-soundrex.sahilchouksey.in/api/v1/search_next?ctoken="
             .concat(t, "&continuation=")
             .concat(n, "&type=next&itct=")
             .concat(a);
@@ -7962,7 +7962,7 @@
             function () {
               return te(
                 {
-                  url: "https://soundrex.onrender.com/soundrex/is-liked",
+                  url: "https://backend-soundrex.sahilchouksey.in/soundrex/is-liked",
                   method: "POST",
                   headers: {authorization: "Bearer " + y},
                   data: {id: _},
@@ -8363,7 +8363,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/browse?id="
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/browse?id="
                       .concat(l)
                       .concat(r ? "&params=" + r : ""),
                     method: "GET",
@@ -8808,7 +8808,7 @@
             function () {
               return te(
                 {
-                  url: "https://soundrex.onrender.com/api/v1/browse?id="
+                  url: "https://backend-soundrex.sahilchouksey.in/api/v1/browse?id="
                     .concat(o)
                     .concat(i ? "&params=" + i : ""),
                   method: "GET",
@@ -9003,7 +9003,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/soundrex/favourites",
+                    url: "https://backend-soundrex.sahilchouksey.in/soundrex/favourites",
                     method: "GET",
                     headers: {authorization: "Bearer " + n},
                   },
@@ -9645,7 +9645,7 @@
                             te(!1),
                             (e.next = 13),
                             ee.a.put(
-                              "https://soundrex.onrender.com/auth/signup",
+                              "https://backend-soundrex.sahilchouksey.in/auth/signup",
                               Object(b.a)(
                                 {
                                   method: "PUT",
@@ -9916,7 +9916,7 @@
                             U(!1),
                             (e.next = 11),
                             ee.a.post(
-                              "https://soundrex.onrender.com/auth/login",
+                              "https://backend-soundrex.sahilchouksey.in/auth/login",
                               Object(b.a)(
                                 {
                                   method: "POST",
@@ -10151,7 +10151,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/lyrics/browse?id=".concat(
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/lyrics/browse?id=".concat(
                       a
                     ),
                     method: "GET",
@@ -10280,7 +10280,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/browse?id=".concat(
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/browse?id=".concat(
                       t
                     ),
                     method: "GET",
@@ -11065,7 +11065,7 @@
               function () {
                 return te(
                   {
-                    url: "https://soundrex.onrender.com/api/v1/audio/next"
+                    url: "https://backend-soundrex.sahilchouksey.in/api/v1/audio/next"
                       .concat(E ? "?id=".concat(E) : "")
                       .concat(
                         I
@@ -11295,7 +11295,7 @@
                 )
                   return (
                     H.mutate({
-                      url: "https://soundrex.onrender.com/api/v1/audio/next"
+                      url: "https://backend-soundrex.sahilchouksey.in/api/v1/audio/next"
                         .concat(E ? "?id=".concat(E) : "")
                         .concat(
                           P
@@ -11399,7 +11399,7 @@
                       x = null === g || void 0 === g ? void 0 : g.playlistId,
                       y = null === g || void 0 === g ? void 0 : g.params;
                     return F.mutate({
-                      url: "https://soundrex.onrender.com/api/v1/audio/next"
+                      url: "https://backend-soundrex.sahilchouksey.in/api/v1/audio/next"
                         .concat(j ? "?id=".concat(j) : "")
                         .concat(
                           x
@@ -12244,7 +12244,7 @@
           q = null === d || void 0 === d ? void 0 : d.videoId,
           X = null === d || void 0 === d ? void 0 : d.playlistId,
           Q = (function (e) {
-            return "https://soundrex.onrender.com/api/v1/audio?id=".concat(e);
+            return "https://backend-soundrex.sahilchouksey.in/api/v1/audio?id=".concat(e);
           })(q);
         Object(c.useEffect)(
           function () {
@@ -12262,7 +12262,7 @@
             function () {
               return te(
                 {
-                  url: "https://soundrex.onrender.com/soundrex/is-liked",
+                  url: "https://backend-soundrex.sahilchouksey.in/soundrex/is-liked",
                   method: "POST",
                   headers: {authorization: "Bearer " + u},
                   data: {id: q},
@@ -12538,7 +12538,7 @@
                 href:
                   pe &&
                   q &&
-                  "https://soundrex.onrender.com/api/v1/audio-download?id="
+                  "https://backend-soundrex.sahilchouksey.in/api/v1/audio-download?id="
                     .concat(q, "&title=")
                     .concat(
                       null === pe ||
@@ -13079,7 +13079,7 @@
                             return (
                               (a = {
                                 method: "POST",
-                                url: "https://soundrex.onrender.com/auth/is-auth",
+                                url: "https://backend-soundrex.sahilchouksey.in/auth/is-auth",
                                 headers: {authorization: "Bearer " + t},
                               }),
                               (e.next = 14),
@@ -13252,7 +13252,7 @@
                                 v.b.promise(
                                   te(
                                     {
-                                      url: "https://soundrex.onrender.com/soundrex/like",
+                                      url: "https://backend-soundrex.sahilchouksey.in/soundrex/like",
                                       method: "POST",
                                       headers: {authorization: "Bearer " + d},
                                       data: t,
@@ -13335,7 +13335,7 @@
                                 v.b.promise(
                                   te(
                                     {
-                                      url: "https://soundrex.onrender.com/soundrex/remove-like",
+                                      url: "https://backend-soundrex.sahilchouksey.in/soundrex/remove-like",
                                       method: "POST",
                                       headers: {authorization: "Bearer " + d},
                                       data: l,
